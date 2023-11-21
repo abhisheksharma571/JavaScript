@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalId;
+    const sayDate = function(str){
+        if(!intervalId){
+            intervalId = setInterval(sayingDate, 1000, "hi");
+            function sayingDate(){
+                console.log(str, Date.now());    //go to console to see the magic
+            }
+        }
+    };
+    const start = document.querySelector('#start').addEventListener('click',sayDate);
+    const stopSaying = function(){
+    clearInterval(intervalId);
+    intervalId = null;
+};
+const stop = document.querySelector('#stop').addEventListener('click',stopSaying);
+</script>
+</html>
