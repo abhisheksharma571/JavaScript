@@ -1,4 +1,4 @@
-let randomNumber = parseInt(Math.random() * 100 + 1);   //to get number between 1 to 100
+  let randomNumber = parseInt(Math.random() * 100 + 1);   //to get number between 1 to 100
 
 const submit = document.querySelector('#subt');
 const userInput = document.querySelector('#guessField');
@@ -47,9 +47,18 @@ function checkGuess(guess) {
     displayMessage(`You guessed it right`);
     endGame();
   } else if (guess < randomNumber) {
-    displayMessage(`Number is TOOO low`);
+    if (randomNumber - guess > 10){
+      displayMessage(`Number is TOOO low`);
+    } else {
+      displayMessage(`Number is low`);
+    }
+   
   } else if (guess > randomNumber) {
-    displayMessage(`Number is TOOO High`);
+    if(guess - randomNumber < 10){
+      displayMessage(`Number is High`);
+    } else {
+      displayMessage(`Number is TOOO High`);
+    }
   }
 }
 
@@ -76,6 +85,12 @@ function endGame() {
 
 function newGame() {
   const newGameButton = document.querySelector('#newGame');
+  newGameButton.style.padding = '10px 20px';
+  newGameButton.style.backgroundColor = 'black';
+  newGameButton.style.color = 'white';
+  newGameButton.style.border = 'none';
+  newGameButton.style.borderRadius = '5px';
+  newGameButton.style.cursor = 'pointer';
   newGameButton.addEventListener('click', function (e) {
     randomNumber = parseInt(Math.random() * 100 + 1);
     prevGuess = [];
