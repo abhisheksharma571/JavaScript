@@ -27,6 +27,7 @@ function addTwoNumbers2(number1, number2){
 
  console.log(loginUserMessage("Abhishek"))
 
+ //Rest parameters allow a function to accept an indefinite number of arguments as an array.
  function calculateCarPrice(val1, val2,...num1){   //... rest operator
     return num1
  }
@@ -51,4 +52,17 @@ function returnSecondValue(getArray){
 }
 console.log(returnSecondValue(myNewArray));
 //also you can directly pass array 
+
+//Higher-order functions are functions that take other functions as arguments or return functions as their result.
+function createMultiplier(multiplier) {
+   return function(num) {
+     return num * multiplier;
+   };
+ }
+ 
+ const double = createMultiplier(2);
+ console.log(double(5)); // 10
+ 
+ const triple = createMultiplier(3);
+ console.log(triple(5)); // 15
  

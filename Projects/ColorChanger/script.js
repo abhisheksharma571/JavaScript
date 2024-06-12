@@ -6,6 +6,7 @@ const body = document.querySelector('body');
 buttons.forEach(function (button){
     button.addEventListener('click', function(e){       
         //The addEventListener() method attaches an event handler to the specified element
+        //e.target: This refers to the element that triggered the event. In this case, it's the element that was clicked.
         if(e.target.id === 'green'){
             body.style.backgroundColor = e.target.id;
             }

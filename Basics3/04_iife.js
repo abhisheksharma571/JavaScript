@@ -2,7 +2,7 @@
 (function chai(){
     //named IIFE
     console.log(`DB CONNECTED`);
-}());     //semicolon needed to stop the context
+})();     //semicolon needed to stop the context
 
 ( (name) => {
     console.log(`DB CONNECTED TWO ${name}`);

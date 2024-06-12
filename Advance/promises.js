@@ -98,5 +98,87 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 })
 .catch((error) => console.log(error))
 
+
+
 // promise.all
-// yes this is also available, kuch reading aap b kro.
+
+const f1Promise = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        if(Math.random() > 0.5){
+            resolve("f1 Friend : Hey I am in for Goa")
+        } else {
+            reject("f1 Friend : Sorry, I don't")
+        }
+    },3000)
+})
+const f2Promise = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        if(Math.random() > 0.5){
+            resolve("f2 Friend : Hey I am in for Goa")
+        } else {
+            reject("f2 Friend : Sorry, I don't")
+        }
+    },3000)
+})
+const f3Promise = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        if(Math.random() > 0.5){
+            resolve("f3 Friend : Hey I am in for Goa")
+        } else {
+            reject("f3 Friend : Sorry, I don't")
+        }
+    },3000)
+})
+
+Promise.all([f1Promise, f2Promise, f3Promise])
+.then((msg)=> {
+    console.log(msg);
+    console.log("Yayy! 😀");
+})
+.catch((msg)=> {
+    console.log(msg);
+    console.log("Yaar band karo Goa jane ka plan 🥲");
+})
+
+
+
+// promise.any
+
+const gf1Promise = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        if(Math.random() > 0.5){
+            resolve("gf1 : Hey I will go for dinner!");
+        } else {
+            reject("gf1 : Phone is unreachable")
+        }
+    },3000)
+})
+const gf2Promise = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        if(Math.random() > 0.5){
+            resolve("gf2 : Hey I will go for dinner!")
+        } else {
+            reject("gf2 : Phone is unreachable")
+        }
+    },3000)
+})
+const gf3Promise = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        if(Math.random() > 0.5){
+            resolve("gf3 : Hey I will go for dinner!")
+        } else {
+            reject("gf3 : Phone is unreachable")
+        }
+    },3000)
+})
+
+Promise.any([gf1Promise, gf2Promise, gf3Promise])
+.then((msg)=> {
+    console.log(msg);
+    console.log("Yayy! 😀");
+})
+.catch((msg)=> {
+    console.log(msg);
+    console.log("Uff, ab kaise katega valentine day 🥲");
+})
+

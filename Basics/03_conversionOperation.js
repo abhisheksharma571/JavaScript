@@ -2,6 +2,15 @@ let score = "33abc"
 let score2 = null
 let score3 = undefined
 
+let str = "42";
+let num = Number(str); // Explicit conversion
+console.log(num); // 42
+
+let floatStr = "3.14";
+console.log(parseInt(floatStr)); // 3
+console.log(parseFloat(floatStr)); // 3.14
+
+
 console.log(typeof score)    //string
 console.log(typeof(score))   //string
 
@@ -36,10 +45,16 @@ console.log(booleanIsLoggedIn)       //true
 //"Abhi" => true
 //1 => true; 0 => false
 
+//String Conversion: Using String() function or toString() method
 let someNUmber = 33
 let stringNumber = String(someNUmber)
 console.log(stringNumber)       //33
 console.log(typeof stringNumber)     //string
+
+let bool = true;
+console.log(bool.toString()); // true
+console.log(typeof(bool));   //string
+
 
 
 //***********************************Operations********************************** 
@@ -54,13 +69,17 @@ let str2 = " Abhishek"
 let str3 = str1 + str2
 console.log(str3)      //Hell Abhishek
 
-console.log("1"+2)       //12
+console.log("1"+2)       //12  // Implicit conversion of number to string
 console.log("1"+2+2);    //122
 console.log(1+2+"2");    //32
 
 console.log(true);       //true
 console.log(+true);      //1
 console.log(+"");        //0
+
+let result = "5" - 3; // Implicit conversion of string to number
+console.log(result); // 2
+
 
 let num1, num2, num3
 num1 = num2 = num3 = 2+2

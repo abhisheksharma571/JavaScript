@@ -31,3 +31,14 @@ console.log(url.includes('abhishek'));     //includes or not
 const str = "Quick brown fox jumps over the lazy dog"
 console.log(str.split(' '))     //separates based on what you passed     //will take (separator)/(separator,limit)
 
+
+//difference between slice and substring methods
+let str2 = "JavaScript";
+
+console.log(str2.substring(4, 1)); // "ava" (indices are swapped)
+console.log(str2.slice(4, 1));     // "" (empty string, no swapping)
+
+console.log(str2.substring(-4, 6)); // "JavaSc" (negative treated as 0)
+console.log(str2.slice(-5, 6));     // "" (negative index treated as str.length - 5)
+
+
